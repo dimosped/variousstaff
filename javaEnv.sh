@@ -1,7 +1,7 @@
 setJavaHome(){
         prev=$JAVA_HOME
         currJavac=$(readlink -f $(which javac))
-        [[ -f $currJavac ]] && { export JAVA_HOME=$($(dirname $(dirname ${currJavac}))); } 
+        [[ -f $currJavac ]] && { export JAVA_HOME=$(dirname $(dirname ${currJavac})); } 
         #JAVA_HOME=${JAVA_HOME%/}
         [[ -d $JAVA_HOME ]] && { export JAVA_HOME ; return 0; }
         export JAVA_HOME=$prev
